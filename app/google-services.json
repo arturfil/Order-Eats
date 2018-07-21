@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "620054414147",
+    "firebase_url": "https://android-order-eats.firebaseio.com",
+    "project_id": "android-order-eats",
+    "storage_bucket": "android-order-eats.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620054414147:android:665d1bd6212ffe7d",
+        "android_client_info": {
+          "package_name": "com.arturofilio.androidordereats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "620054414147-p200vleavmlc0n0m489692vckukemri6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.arturofilio.androidordereats",
+            "certificate_hash": "8efe802d6cef29f444c2f89f38be3f3ec4731d68"
+          }
+        },
+        {
+          "client_id": "620054414147-k9eos8k7oldoljg712aumqk2mq8u8kc5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCwOixH7A2TAHEnTfOCjPH12fzPxHQi-c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "620054414147-k9eos8k7oldoljg712aumqk2mq8u8kc5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
