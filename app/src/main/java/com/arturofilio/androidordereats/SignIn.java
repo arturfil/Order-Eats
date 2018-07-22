@@ -1,6 +1,7 @@
 package com.arturofilio.androidordereats;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.arturofilio.androidordereats.Common.Common;
 import com.arturofilio.androidordereats.Model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -51,7 +53,6 @@ public class SignIn extends AppCompatActivity {
 
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-
                         // Check if user exists in the database
                         if (dataSnapshot.child(editPhone.getText().toString()).exists()) {
 
@@ -61,8 +62,14 @@ public class SignIn extends AppCompatActivity {
                             User user = dataSnapshot.child(editPhone.getText().toString()).getValue(User.class);
 
                             if (user.getPassword().equals(editPassword.getText().toString())) {
-                                Toast.makeText(SignIn.this, "Sign in successfully!", Toast.LENGTH_SHORT).show();
+
+                                Intent homeIntent = new Intent(SignIn.this, Home.class);
+                                Common.currentUser = user;
+                                startActivity(homeIntent);
+                                finish();
+
                             } else {
+
                                 Toast.makeText(SignIn.this, "Wrong password, please try again", Toast.LENGTH_SHORT).show();
                             }
 
