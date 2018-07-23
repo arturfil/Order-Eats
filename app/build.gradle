@@ -32,6 +32,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:16.0.1'
     implementation 'com.firebaseui:firebase-ui-database:1.2.0'
 
+    //Text Drawable Library
+    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+
+    //SQLite Library
+    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+
     //Button Library
     implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
 
