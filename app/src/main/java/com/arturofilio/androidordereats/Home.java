@@ -1,5 +1,6 @@
 package com.arturofilio.androidordereats;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import com.arturofilio.androidordereats.Common.Common;
 import com.arturofilio.androidordereats.Interface.ItemClickListener;
 import com.arturofilio.androidordereats.Model.Category;
+import com.arturofilio.androidordereats.ViewHolder.FoodViewHolder;
 import com.arturofilio.androidordereats.ViewHolder.MenuViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
@@ -36,6 +38,8 @@ public class Home extends AppCompatActivity
 
     RecyclerView recycler_menu;
     RecyclerView.LayoutManager layoutManager;
+
+    FirebaseRecyclerAdapter<Category,MenuViewHolder> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +88,7 @@ public class Home extends AppCompatActivity
     }
 
     private void loadMenu() {
-        FirebaseRecyclerAdapter<Category,MenuViewHolder> adapter = new FirebaseRecyclerAdapter<Category,
+         adapter = new FirebaseRecyclerAdapter<Category,
                 MenuViewHolder>(Category.class,R.layout.menu_item,MenuViewHolder.class,category) {
             @Override
             protected void populateViewHolder(MenuViewHolder viewHolder, Category model, int position) {
@@ -95,7 +99,11 @@ public class Home extends AppCompatActivity
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(Home.this, ""+clickItem.getName(), Toast.LENGTH_SHORT).show();
+                        //Get CategoryId and send it to the new Activity
+                        Intent foodList = new Intent(Home.this, FoodList.class);
+                        //We are going to use the Category as a Key
+                        foodList.putExtra("CategoryId", adapter.getRef(position).getKey());
+                        startActivity(foodList);
                     }
                 });
             }

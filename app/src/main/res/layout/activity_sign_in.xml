@@ -38,7 +38,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@android:color/white"
-            android:text="1324"
             android:textColor="@android:color/white"
             android:textSize="34sp"
             android:inputType="textPassword"
