@@ -32,6 +32,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:16.0.1'
     implementation 'com.firebaseui:firebase-ui-database:1.2.0'
 
+    //Material Search Bar
+    implementation 'com.github.mancj:MaterialSearchBar:0.7.1'
+
     //Text Drawable Library
     implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
 
