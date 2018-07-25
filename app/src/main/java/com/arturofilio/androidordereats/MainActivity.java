@@ -21,9 +21,10 @@ public class MainActivity extends AppCompatActivity {
         btnSignIn = (Button) findViewById(R.id.btnSignIn);
         btnSignUp = (Button) findViewById(R.id.btnSignUp);
 
-//        txtSlogan = (TextView) findViewById(R.id.textSlogan);
-//        Typeface face = Typeface.createFromAsset(getAssets(), "fonts/nabila.ttf");
-//        txtSlogan.setTypeface(face);
+        txtSlogan = (TextView) findViewById(R.id.textSlogan);
+
+        Typeface face = Typeface.createFromAsset(getAssets(), "fonts/Nabila.ttf");
+        txtSlogan.setTypeface(face);
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override

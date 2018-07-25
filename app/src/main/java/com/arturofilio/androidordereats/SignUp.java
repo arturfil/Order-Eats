@@ -46,18 +46,21 @@ public class SignUp extends AppCompatActivity {
                 mDialog.setMessage("Loading...");
                 mDialog.show();
 
-                table_user.addValueEventListener(new ValueEventListener() {
+                table_user.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                         //Check if user's phone already exists.
                         if(dataSnapshot.child(editPhone.getText().toString()).exists()){
                             mDialog.dismiss();
                             Toast.makeText(SignUp.this, "User with that phone number already exists", Toast.LENGTH_SHORT).show();
+
                         } else {
+
                             mDialog.dismiss();
                             User user = new User(editName.getText().toString(), editPassword.getText().toString());
                             table_user.child(editPhone.getText().toString()).setValue(user);
-                            Toast.makeText(SignUp.this, "Singup was successful!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUp.this, "SignUp was successful!", Toast.LENGTH_SHORT).show();
                             finish();
                         }
                     }

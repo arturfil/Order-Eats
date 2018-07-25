@@ -44,7 +44,7 @@ dependencies {
     //Button Library
     implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
 
-    // Button Library
+    // Button Library & Edit Text libraries
     implementation 'info.hoang8f:fbutton:1.0.5'
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
 
